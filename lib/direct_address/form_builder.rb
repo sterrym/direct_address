@@ -11,10 +11,9 @@ module ActionView
 			module InstanceMethods
 				def country_select
 					@countries ||= Country.all
-					select_name = self.object_name
 					html = self.select(:country_id, ([['Select a Country', nil]] + @countries.collect{|country| [country.name, country.id]}))
 					html << self.select(:region_id, ([['Select a Region', nil]] + (self.object && self.object.country && self.object.country.regions.collect{|region| [region.name, region.id]} || [])))
-					html << "<script type=\"text/javascript\">if(typeof(Prototype) != 'undefined'){Element.observe(window, 'load', function(){new CountrySelect({country_select_id : '#{select_name}_country_id', region_select_id : '#{select_name}_region_id'})});}else{document.getElementById('#{select_name}_country_id').style.display = 'none';document.getElementById('#{select_name}_region_id').style.display = 'none';}</script>"
+					html << "<script type=\"text/javascript\">if(typeof(Prototype) != 'undefined'){Element.observe(window, 'load', function(){new CountrySelect({country_select_id : '#{sanitized_object_name}_country_id', region_select_id : '#{sanitized_object_name}_region_id'})});}else{document.getElementById('#{sanitized_object_name}_country_id').style.display = 'none';document.getElementById('#{sanitized_object_name}_region_id').style.display = 'none';}</script>"
 					html
 				end
 			end
