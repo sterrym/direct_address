@@ -94,18 +94,9 @@ class Geoname
 	
 	def self.gem_integrated?
 		begin
-			ok = true
-			c = Country.new
-			%w(name abbreviation).each do |method|
-				ok = ok && c.methods.include?(method)
-				
-			end
-			
-			r = Region.new
-			%w(name country).each do |method|
-				ok = ok && r.methods.include?(method)
-			end
-			
+			c = Country.new(:name => 'test', :abbreviation => 't')
+			r = Region.new(:name => 'test', :country_id => -1)
+			true
 		rescue
 			false
 		end
