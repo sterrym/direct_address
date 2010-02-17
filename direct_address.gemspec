@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "generators/direct_address/templates/models/address.rb",
      "generators/direct_address/templates/models/country.rb",
      "generators/direct_address/templates/models/region.rb",
+     "generators/direct_address/templates/tasks/harvest.rake",
      "lib/direct_address.rb",
      "lib/direct_address/form_builder.rb",
      "lib/direct_address/form_helper.rb",

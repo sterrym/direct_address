@@ -1,4 +1,4 @@
-class CreateRegions < ActiveRecord::Migration
+class DirectAddressMigration < ActiveRecord::Migration
   def self.up
     create_table :regions do |t|
 			t.references :country
