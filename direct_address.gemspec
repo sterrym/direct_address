@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "direct_address-0.0.2.gem",
      "direct_address.gemspec",
      "generators/direct_address/direct_address_generator.rb",
      "generators/direct_address/templates/controllers/regions_controller.rb",
