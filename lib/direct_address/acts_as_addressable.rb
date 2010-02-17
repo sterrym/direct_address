@@ -8,7 +8,7 @@ module Direct
 		module ClassMethods
 			
 			def acts_as_addressable
-				belongs_to :address, :as => :addressable
+				has_one :address, :as => :addressable
 				accepts_nested_attributes_for :address
 				attr_accessible :address_attributes
 			end

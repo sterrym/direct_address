@@ -1,6 +1,6 @@
 class Address < ActiveRecord::Base
 	
-	has_one :addressable, :polymorphic => true
+	belongs_to :addressable, :polymorphic => true
 	belongs_to :country
 	belongs_to :region
 	
