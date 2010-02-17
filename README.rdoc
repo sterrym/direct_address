@@ -1,6 +1,6 @@
 = direct_address
 
-Description goes here.
+Direct Address provides
 
 == Note on Patches/Pull Requests
  
