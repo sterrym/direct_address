@@ -1,12 +1,12 @@
 class DirectAddressGenerator < Rails::Generator::Base
   def manifest
     record do |m|
-		
-			m.directory "lib/direct_address"
-			
 			
 			m.file "js/country_select.js", "public/javascripts/country_select.js"
+			
+			m.directory "app/views/regions"
 			m.file "views/index.json.rb", "app/views/regions/index.json.erb"
+			
 			m.file "controllers/regions_controller.rb", "app/controllers/regions_controller.rb"
 			
 			%w(address country region).each do |model|
