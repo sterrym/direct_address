@@ -5,12 +5,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "direct_address"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "short summary"
+    gem.description = "long summary"
     gem.email = "mn@mcaddie.com"
     gem.homepage = "http://github.com/mnelson/direct_address"
     gem.authors = ["Mike Nelson"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+		gem.files.exclude 'lib/direct_address/harvester/*'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -42,4 +43,13 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "direct_address #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+require File.dirname(__FILE__) + '/lib/direct_address/harvester/geoname.rb'
+
+namespace :direct_address do
+	desc "pulls up to date country and region data from geonames.org"
+  task :pull do
+		Geoname.retrieve_to_db
+	end
 end
