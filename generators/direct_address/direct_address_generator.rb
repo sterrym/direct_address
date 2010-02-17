@@ -5,7 +5,7 @@ class DirectAddressGenerator < Rails::Generator::Base
 			m.file "js/country_select.js", "public/javascripts/country_select.js"
 			
 			m.directory "app/views/regions"
-			m.file "views/index.json.rb", "app/views/regions/index.json.erb"
+			m.file "views/index.json.erb", "app/views/regions/index.json.erb"
 			
 			m.file "controllers/regions_controller.rb", "app/controllers/regions_controller.rb"
 			
