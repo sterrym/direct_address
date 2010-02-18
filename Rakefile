@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "direct_address"
-    gem.summary = "short summary"
-    gem.description = "long summary"
-    gem.email = "mn@mcaddie.com"
+    gem.summary = "Direct Address provides a rails app with simple address features. It allows up-to-date data to be pulled in from geoname.org."
+    gem.description = "Direct Address provides a rails app with simple address features. This is a streamlined implementation of address functionality. Direct Address provides you with address, country, and region classes. It also provides a generator which generates the necessary javascript and rake tasks to implement properly. You'll also get form helpers to easily implement Direct Address in your views. A rake task is provided that allows up to date country and region information to be downloaded from geoname.org."
+    gem.email = "mdnelson30@gmail.com"
     gem.homepage = "http://github.com/mnelson/direct_address"
     gem.authors = ["Mike Nelson"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
