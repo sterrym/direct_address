@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{direct_address}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Nelson"]
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "direct_address-0.0.2.gem",
      "direct_address.gemspec",
      "generators/direct_address/direct_address_generator.rb",
      "generators/direct_address/templates/controllers/regions_controller.rb",
