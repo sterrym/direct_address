@@ -5,10 +5,13 @@ require 'rubygems'
 require 'spec'
 require 'spec/autorun'
 require 'active_record'
+require 'action_view'
 require 'direct_address'
-require 'direct_address/address'
-require 'direct_address/country'
-require 'direct_address/region'
+
+%w(address country region).each do |model|
+	require File.dirname(__FILE__) + "/../generators/direct_address/templates/models/#{model}.rb"
+end
+
 require 'model/user'
 
 ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + '/debug.log')

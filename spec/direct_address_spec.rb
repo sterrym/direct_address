@@ -30,4 +30,13 @@ describe "DirectAddress" do
 		@address.single_line.should eql([@address.street1, "#{@address.city} #{@address.region_name} #{@address.postal}", @address.country_abbrev].join(', '))
 	end
 	
+	it "should validate length of abbreviation" do 
+		c = Country.new(:abbrev => 'a', :name => 'america')
+		c.valid?.should be_false
+	end
+	
+	it "should format the abbreviation" do 
+		c = Country.create(:abbrev => 'aa', :name => 'All Americas')
+		c.abbrev.should eql('AA')
+	end
 end
