@@ -4,6 +4,8 @@ Direct Address provides a rails app with simple address features. This is a stre
 
 == Installation
 
+<b>Your database must be utf-8 encoded. Country / region names will break if not.</b>
+
 Add direct_address to your environment.rb
 
  config.gem 'direct_address'
