@@ -1,7 +1,76 @@
 = direct_address
 
-Direct Address provides
+Direct Address provides a rails app with simple address features. This is a streamlined implementation of address functionality. Direct Address provides you with address, country, and region classes. It also provides a generator which generates the necessary javascript and rake tasks to implement properly. You'll also get form helpers to easily implement Direct Address in your views. A rake task is provided that allows up to date country and region information to be downloaded from geoname.org.
 
+== Installation
+
+Add direct_address to your environment.rb
+
+ config.gem 'direct_address'
+ 
+Then install the gem:
+ 
+ rake gems:install
+ 
+After you've installed the gem, you'll need to generate your classes, javascript, and rake task.
+
+ script/generate direct_address
+ 
+Once that's complete, migrate your database
+
+ rake db:migrate
+ 
+Now you're ready to download up-to-date country and region information from geoname.org
+
+ rake direct_address:pull
+ 
+<b>This will take a few minutes and should be done on a decent connection.</b>
+
+== Usage
+
+Once you've run the generators there's not much you need to do. You can utilize the classes as they are or you can use the acts_as_addressable option. To use acts_as_addressable, include it in your class like this:
+
+ class User < ActiveRecord::Base
+  acts_as_addressable
+ end
+ 
+By doing this you are giving the user a single address. One thing to note is that the generator didn't create an addresses_controller or add any routes regarding addresses. By default, it is expected that the address form will be nested in the parent form. For this reason, the accepts_nested_attributes_for and attr_accessors are included in acts_as_addressable. If you'd like to implement things differently, create a controller and implement your models to your liking.
+
+== Form Helpers
+
+By including Direct Address in your project you've added a few form helpers. Their implementation is very easy. You can either use it within a form_for like this:
+
+ <% form_for @user do |user_form| %>
+  ...
+  <% user_form.fields_for :address do |address_form| %>
+   ...
+   <%= address_form.country_select %>
+   ...
+  <% end %>
+  ...
+ <% end %>
+
+Or you can use it via a tag helper like this:
+
+ <%= country_select_tag 'user[account]' %>
+ 
+Either way produces the same exact thing. Take note that this does require loading at least prototype *beforehand* and the country_select file before the page load is complete. If you do like to defer the loading of extra scripts, feel free to do so with country_select. The setup doesn't occur until the window.onload event is fired. An example load order would be:
+
+ <script type="text/javascript" src="javascripts/prototype.js"></script>
+ POINT A
+ 
+ ...
+ <% form... %>
+  <%= f.country_select %>
+ <% end %>
+ ...
+ 
+ POINT B
+
+Where the following call could be at either POINT A or POINT B:
+
+ <script type="text/javascript" src="javascripts/country_select.js"></script>
+ 
 == Note on Patches/Pull Requests
  
 * Fork the project.
