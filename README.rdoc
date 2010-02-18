@@ -57,7 +57,8 @@ Or you can use it via a tag helper like this:
 Either way produces the same exact thing. Take note that this does require loading at least prototype *beforehand* and the country_select file before the page load is complete. If you do like to defer the loading of extra scripts, feel free to do so with country_select. The setup doesn't occur until the window.onload event is fired. An example load order would be:
 
  <script type="text/javascript" src="javascripts/prototype.js"></script>
- POINT A
+ 
+ <b>POINT A</b>
  
  ...
  <% form... %>
@@ -65,7 +66,7 @@ Either way produces the same exact thing. Take note that this does require loadi
  <% end %>
  ...
  
- POINT B
+ <b>POINT B</b>
 
 Where the following call could be at either POINT A or POINT B:
 
