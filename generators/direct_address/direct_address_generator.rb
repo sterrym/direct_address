@@ -17,7 +17,7 @@ class DirectAddressGenerator < Rails::Generator::Base
 			
 			m.migration_template "migrations/direct_address_migration.rb", "db/migrate", {:migration_file_name => "direct_address_migration"}
 			
-			m.director "lib/tasks"
+			m.directory "lib/tasks"
 			m.file "tasks/harvest.rake", "lib/tasks/direct_address_harvest.rake"
 			
 		end
