@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
 	
-	has_one :address, :as => :addressable
+	acts_as_addressable
 	
 end

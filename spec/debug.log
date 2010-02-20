@@ -410,3 +410,74 @@ WARNING: Can't mass-assign these protected attributes: region, country, addressa
   [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
   [4;35;1mCountry Create (0.2ms)[0m   [0mINSERT INTO `countries` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('All Americas', '2010-02-17 17:59:03', '2010-02-17 17:59:03', 'AA')[0m
   [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (46.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (69.1ms)[0m   [0mDROP TABLE `addresses`[0m
+  [4;36;1mSQL (119.5ms)[0m   [0;1mCREATE TABLE `addresses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `addressable_id` int(11) NOT NULL, `addressable_type` varchar(255) NOT NULL, `country_id` int(11), `region_id` int(11), `street1` varchar(255), `street2` varchar(255), `city` varchar(255), `postal` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE `countries`[0m
+  [4;35;1mSQL (253.6ms)[0m   [0mCREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `abbreviation` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mDROP TABLE `regions`[0m
+  [4;36;1mSQL (117.2ms)[0m   [0;1mCREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `country_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.4ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [4;36;1mCountry Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCountry Create (0.3ms)[0m   [0;1mINSERT INTO `countries` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('United States', '2010-02-18 12:33:52', '2010-02-18 12:33:52', 'US')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRegion Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `regions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegion Create (0.2ms)[0m   [0;1mINSERT INTO `regions` (`name`, `created_at`, `updated_at`, `country_id`) VALUES('Kansas', '2010-02-18 12:33:52', '2010-02-18 12:33:52', 1)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`name`, `created_at`, `updated_at`) VALUES('Mike', '2010-02-18 12:33:52', '2010-02-18 12:33:52')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAddress Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAddress Create (0.6ms)[0m   [0;1mINSERT INTO `addresses` (`city`, `created_at`, `postal`, `street1`, `updated_at`, `addressable_type`, `country_id`, `street2`, `addressable_id`, `region_id`) VALUES('Whitmore', '2010-02-18 12:33:52', '04330', '54 Parkins Way', '2010-02-18 12:33:52', 'User', 1, NULL, 1, 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCountry Create (0.2ms)[0m   [0mINSERT INTO `countries` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('All Americas', '2010-02-18 12:33:52', '2010-02-18 12:33:52', 'AA')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDROP TABLE `addresses`[0m
+  [4;36;1mSQL (61.2ms)[0m   [0;1mCREATE TABLE `addresses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `addressable_id` int(11) NOT NULL, `addressable_type` varchar(255) NOT NULL, `country_id` int(11), `region_id` int(11), `street1` varchar(255), `street2` varchar(255), `city` varchar(255), `postal` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE `countries`[0m
+  [4;35;1mSQL (148.3ms)[0m   [0mCREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `abbreviation` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDROP TABLE `regions`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mCREATE TABLE `regions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `country_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE `users`[0m
+  [4;35;1mSQL (116.1ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mCountry Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCountry Create (0.3ms)[0m   [0;1mINSERT INTO `countries` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('United States', '2010-02-18 12:34:07', '2010-02-18 12:34:07', 'US')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRegion Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `regions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegion Create (0.2ms)[0m   [0;1mINSERT INTO `regions` (`name`, `created_at`, `updated_at`, `country_id`) VALUES('Kansas', '2010-02-18 12:34:07', '2010-02-18 12:34:07', 1)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: name
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`name`, `created_at`, `updated_at`) VALUES(NULL, '2010-02-18 12:34:07', '2010-02-18 12:34:07')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAddress Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAddress Create (0.2ms)[0m   [0;1mINSERT INTO `addresses` (`city`, `created_at`, `postal`, `street1`, `updated_at`, `addressable_type`, `country_id`, `street2`, `addressable_id`, `region_id`) VALUES('Whitmore', '2010-02-18 12:34:07', '04330', '54 Parkins Way', '2010-02-18 12:34:07', 'User', 1, NULL, 1, 1)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCountry Create (0.2ms)[0m   [0mINSERT INTO `countries` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('All Americas', '2010-02-18 12:34:07', '2010-02-18 12:34:07', 'AA')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
