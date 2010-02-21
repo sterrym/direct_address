@@ -24,7 +24,7 @@ Once that's complete, migrate your database
  
 Now you're ready to download up-to-date country and region information from geoname.org
 
- rake direct_address:pull
+ rake direct_address:seed
  
 <b>This will take a few minutes and should be done on a decent connection.</b>
 
