@@ -71,7 +71,7 @@ class Geoname
 	
 	def self.parse_regions(body)
 		doc = Hpricot(body)
-		(doc/"#subdivtable td > a[@href]").collect {|elem| elem.innerHTML}
+		(doc/"#subdivtable tr td:nth-child(4) a[@href]").collect {|elem| elem.innerHTML}
 	end
 	
 	def self.url_format(string)
