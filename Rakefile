@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/mnelson/direct_address"
     gem.authors = ["Mike Nelson"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "hpricot"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
