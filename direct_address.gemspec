@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{direct_address}
-  s.version = "0.0.8"
+  s.version = "0.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Nelson"]
-  s.date = %q{2010-03-01}
+  s.date = %q{2010-03-03}
   s.description = %q{Direct Address provides a rails app with simple address features. This is a streamlined implementation of address functionality. Direct Address provides you with address, country, and region classes. It also provides a generator which generates the necessary javascript and rake tasks to implement properly. You'll also get form helpers to easily implement Direct Address in your views. A rake task is provided that allows up to date country and region information to be downloaded from geoname.org.}
   s.email = %q{mdnelson30@gmail.com}
   s.extra_rdoc_files = [
