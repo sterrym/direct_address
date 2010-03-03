@@ -64,7 +64,7 @@ Either way produces the same exact thing. Take note that this does require loadi
  
  ...
  <% form... %>
-  <%= f.country_select %>
+  <%= f.country_select(:include_labels => true) %> // include_labels adds a country and region label before each selector respectively
  <% end %>
  ...
  
