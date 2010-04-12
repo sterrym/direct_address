@@ -7,6 +7,7 @@ describe "DirectAddress" do
 		@user = User.create(:name => 'Mike')
 		@address = Address.create(:addressable => @user, :country => @country, :region => @region, :street1 => '54 Parkins Way', :city => 'Whitmore', :postal => '04330')
 	end
+	
   it "should validate countries properly" do
     c = Country.new
 		c.valid?.should be_false
