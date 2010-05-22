@@ -1,5 +1,3 @@
-require 'rubygems'
-
 class Geoname
 	
 	class InvalidModelError < StandardError; end
@@ -18,9 +16,8 @@ class Geoname
 			end
 		end
 	end
-	
-	
-	private
+
+private
 	
 	def self.gem_integrated?
 		begin

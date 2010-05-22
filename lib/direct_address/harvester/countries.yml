@@ -30,7 +30,7 @@
 - - AW
   - Aruba
 - - AX
-  - Aland Islands
+  - "\xC3\x85land Islands"
 - - AZ
   - Azerbaijan
 - - BA
@@ -76,13 +76,13 @@
 - - CA
   - Canada
 - - CC
-  - Cocos Islands
+  - Cocos [Keeling] Islands
 - - CD
-  - Congo - Kinshasa
+  - Congo [DRC]
 - - CF
   - Central African Republic
 - - CG
-  - Congo - Brazzaville
+  - Congo [Republic]
 - - CH
   - Switzerland
 - - CI
@@ -290,11 +290,11 @@
 - - ML
   - Mali
 - - MM
-  - Myanmar
+  - Myanmar [Burma]
 - - MN
   - Mongolia
 - - MO
-  - Macao
+  - Macau
 - - MP
   - Northern Mariana Islands
 - - MQ
@@ -360,11 +360,11 @@
 - - PM
   - Saint Pierre and Miquelon
 - - PN
-  - Pitcairn
+  - Pitcairn Islands
 - - PR
   - Puerto Rico
 - - PS
-  - Palestinian Territory
+  - Palestinian Territories
 - - PT
   - Portugal
 - - PW
@@ -374,7 +374,7 @@
 - - QA
   - Qatar
 - - RE
-  - Reunion
+  - "R\xC3\xA9union"
 - - RO
   - Romania
 - - RS
@@ -414,7 +414,7 @@
 - - SR
   - Suriname
 - - ST
-  - Sao Tome and Principe
+  - "S\xC3\xA3o Tom\xC3\xA9 and Pr\xC3\xADncipe"
 - - SV
   - El Salvador
 - - SY
@@ -458,7 +458,7 @@
 - - UG
   - Uganda
 - - UM
-  - United States Minor Outlying Islands
+  - U.S. Minor Outlying Islands
 - - US
   - United States
 - - UY
@@ -466,7 +466,7 @@
 - - UZ
   - Uzbekistan
 - - VA
-  - Vatican
+  - Vatican City
 - - VC
   - Saint Vincent and the Grenadines
 - - VE
@@ -483,6 +483,8 @@
   - Wallis and Futuna
 - - WS
   - Samoa
+- - XK
+  - Kosovo
 - - YE
   - Yemen
 - - YT
