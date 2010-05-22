@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{direct_address}
-  s.version = "0.0.11"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Nelson"]
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
      "lib/direct_address/form_builder.rb",
      "lib/direct_address/form_helper.rb",
      "lib/direct_address/harvester/countries.yml",
+     "lib/direct_address/harvester/extend_string.rb",
      "lib/direct_address/harvester/geoname.rb",
      "lib/direct_address/harvester/regions/AD.yml",
      "lib/direct_address/harvester/regions/AE.yml",
@@ -77,10 +78,7 @@ Gem::Specification.new do |s|
      "lib/direct_address/harvester/regions/BY.yml",
      "lib/direct_address/harvester/regions/BZ.yml",
      "lib/direct_address/harvester/regions/CA.yml",
-     "lib/direct_address/harvester/regions/CC.yml",
-     "lib/direct_address/harvester/regions/CD.yml",
      "lib/direct_address/harvester/regions/CF.yml",
-     "lib/direct_address/harvester/regions/CG.yml",
      "lib/direct_address/harvester/regions/CH.yml",
      "lib/direct_address/harvester/regions/CI.yml",
      "lib/direct_address/harvester/regions/CK.yml",
@@ -184,7 +182,6 @@ Gem::Specification.new do |s|
      "lib/direct_address/harvester/regions/MH.yml",
      "lib/direct_address/harvester/regions/MK.yml",
      "lib/direct_address/harvester/regions/ML.yml",
-     "lib/direct_address/harvester/regions/MM.yml",
      "lib/direct_address/harvester/regions/MN.yml",
      "lib/direct_address/harvester/regions/MO.yml",
      "lib/direct_address/harvester/regions/MP.yml",
@@ -281,11 +278,13 @@ Gem::Specification.new do |s|
      "lib/direct_address/harvester/regions/VU.yml",
      "lib/direct_address/harvester/regions/WF.yml",
      "lib/direct_address/harvester/regions/WS.yml",
+     "lib/direct_address/harvester/regions/XK.yml",
      "lib/direct_address/harvester/regions/YE.yml",
      "lib/direct_address/harvester/regions/YT.yml",
      "lib/direct_address/harvester/regions/ZA.yml",
      "lib/direct_address/harvester/regions/ZM.yml",
      "lib/direct_address/harvester/regions/ZW.yml",
+     "lib/direct_address/harvester/retriever.rb",
      "spec/database.yml",
      "spec/debug.log",
      "spec/direct_address_spec.rb",
