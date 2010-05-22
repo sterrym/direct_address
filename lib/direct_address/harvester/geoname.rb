@@ -9,7 +9,7 @@ class Geoname
 			abbrev = country[0]
 			name = country[1]
 			c = Country.find_or_create_by_abbreviation(:abbreviation => abbrev, :name => name)
-			regions = YAML.load_file(File.join(File.dirname(__FILE__), 'regions', "#{abbrev}.yml")) || []
+			regions = YAML.load_file(File.join(File.dirname(__FILE__), 'regions', "#{abbrev}.yml")) rescue [] 
 			for region in regions
 				r = c.regions.find_or_create_by_name(:name => region)
 				puts "Created country / region: #{name} / #{region}"
