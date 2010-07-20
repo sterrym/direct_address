@@ -1,12 +1,12 @@
 (function($) {
   $.fn.country_select = function(settings) {
-    options =  $.extend({'region_select_id': null}, settings);
+    var options =  $.extend({'region_select_id': null}, settings);
 
     this.each(function() {
       $(this).bind('change', function() {
         var region = $(options['region_select_id'])
         region.selectedIndex = -1;
-        country_id = $(this).val();
+        var country_id = $(this).val();
         $.ajax({
           url : '/regions.json?country_id=' + country_id,
           type : 'get',
