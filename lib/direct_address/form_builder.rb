@@ -18,16 +18,18 @@ module ActionView
         def country_select_country_field(options = {})
           @countries ||= Country.all
           html = ''
+          html = html.respond_to?(:html_safe) ? html.html_safe : html
           html.concat self.label(:country) if options[:include_labels]
           html.concat self.select(:country_id, ([['Select a Country', nil]] + @countries.collect{|country| [country.name, country.id]}))
-          options[:nested_in] ? self.template.content_tag(options[:nested_in], options[:nested_in_options]) { (html.respond_to?(:html_safe) ? html.html_safe : html) } : html
+          options[:nested_in] ? self.template.content_tag(options[:nested_in], options[:nested_in_options]) { html } : html
         end
 
         def country_select_region_field(options = {})
           html = ''
+          html = html.respond_to?(:html_safe) ? html.html_safe : html
           html.concat self.label(:region) if options[:include_labels]
           html.concat self.select(:region_id, ([['Select a Region', nil]] + (self.object && self.object.country && self.object.country.regions.collect{|region| [region.name, region.id]} || [])))
-          options[:nested_in] ? self.template.content_tag(options[:nested_in], options[:nested_in_options]) { (html.respond_to?(:html_safe) ? html.html_safe : html) } : html.html_safe
+          options[:nested_in] ? self.template.content_tag(options[:nested_in], options[:nested_in_options]) { html } : html
         end
         
         def country_select_javascript(options = {})
