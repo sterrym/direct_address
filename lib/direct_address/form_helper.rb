@@ -18,16 +18,16 @@ module ActionView
           country_options = options_for_select([['Select a Country', nil]] + @countries.collect{|country| [country.name, country.id]}, country_id)
           region_options = options_for_select([['Select a Region', nil]] + @regions.collect{|region| [region.name, region.id]}, region_id)
           html = ''
-          html << label_tag("#{object_string}[country_id]", 'Country') if options[:include_labels]
-          html << select_tag("#{object_string}[country_id]", country_options, :id => "#{object_id}_country_id")
-          html << label_tag("#{object_string}[region_id]", 'Region') if options[:include_labels]
-          html << select_tag("#{object_string}[region_id]", region_options, :id => "#{object_id}_region_id")
+          html.concat label_tag("#{object_string}[country_id]", 'Country') if options[:include_labels]
+          html.concat select_tag("#{object_string}[country_id]", country_options, :id => "#{object_id}_country_id")
+          html.concat label_tag("#{object_string}[region_id]", 'Region') if options[:include_labels]
+          html.concat select_tag("#{object_string}[region_id]", region_options, :id => "#{object_id}_region_id")
           if options[:use_jquery]
-            html << "<script type=\"text/javascript\">jQuery(function($) {$('##{object_id}_country_id').country_select({region_select_id : '##{object_id}_region_id'});});</script>"
+            html.concat "<script type=\"text/javascript\">jQuery(function($) {$('##{object_id}_country_id').country_select({region_select_id : '##{object_id}_region_id'});});</script>"
           else
-            html << "<script type=\"text/javascript\">if(typeof(Prototype) != 'undefined'){Element.observe(window, 'load', function(){if(typeof(CountrySelect) == 'undefined'){try{console.log('country_select.js not loaded.');} catch (e) {};return;};new CountrySelect({country_select_id : '#{object_id}_country_id', region_select_id : '#{object_id}_region_id'});});}else{document.getElementById('#{object_id}_country_id').style.display = 'none';document.getElementById('#{object_id}_region_id').style.display = 'none';}</script>"
+            html.concat "<script type=\"text/javascript\">if(typeof(Prototype) != 'undefined'){Element.observe(window, 'load', function(){if(typeof(CountrySelect) == 'undefined'){try{console.log('country_select.js not loaded.');} catch (e) {};return;};new CountrySelect({country_select_id : '#{object_id}_country_id', region_select_id : '#{object_id}_region_id'});});}else{document.getElementById('#{object_id}_country_id').style.display = 'none';document.getElementById('#{object_id}_region_id').style.display = 'none';}</script>"
           end
-          html
+          html.respond_to?(:html_safe) ? html.html_safe : html
         end
       end
 
