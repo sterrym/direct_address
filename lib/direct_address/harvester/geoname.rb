@@ -11,7 +11,9 @@ class Geoname
 			c = Country.find_or_create_by_abbreviation(:abbreviation => abbrev, :name => name)
 			regions = YAML.load_file(File.join(File.dirname(__FILE__), 'regions', "#{abbrev}.yml")) rescue [] 
 			for region in regions
-				r = c.regions.find_or_create_by_name(:name => region)
+				# this stopped working - using the next line instead
+				# r = c.regions.find_or_create_by_name(:name => region)
+				r = Region.find_or_create_by_name_and_country_id(:name => region, :country_id => c.id)
 				puts "Created country / region: #{name} / #{region}"
 			end
 		end
